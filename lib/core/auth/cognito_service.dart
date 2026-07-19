@@ -2,10 +2,10 @@ import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 export 'package:amazon_cognito_identity_dart_2/cognito.dart';
 
 class CognitoService {
-  static final userPool =  CognitoUserPool(
-    'mx-central-1_XdyYyHSF3', // Pool ID
-    '6co1a8388hmkpdtq63u6qjeact' //Cognito ID
-  );
+  static const userPoolId = String.fromEnvironment('COGNITO_USER_POOL_ID');
+  static const clientId = String.fromEnvironment('COGNITO_CLIENT_ID');
+
+  static final userPool = CognitoUserPool(userPoolId, clientId);
 
   //Registro de usuarios en Cognito
   Future<CognitoUserPoolData> registro(String email, String password) async{
@@ -60,4 +60,7 @@ class CognitoService {
     final user = await userPool.getCurrentUser();
     await user?.signOut();
   }
+
+
+
 }
