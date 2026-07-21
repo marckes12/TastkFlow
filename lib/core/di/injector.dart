@@ -33,5 +33,5 @@ void setupDependencies(){
   getIt.registerLazySingleton(() => TaskLocalDatasource());
   getIt.registerLazySingleton<TaskRepository>(() => TaskRepositoryImpl(getIt(), getIt()));
   getIt.registerLazySingleton(() => GetTasksUsecase(getIt()));
-  getIt.registerFactory(() => TaskViewmodel(getIt(), getIt()));
+  getIt.registerFactory(() => TaskViewmodel(getIt(), getIt(), getIt()));
 }
