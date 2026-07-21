@@ -114,6 +114,29 @@ class _CognitoTestViewState extends State<CognitoTestView> {
             const SizedBox(height: 20,),  
             Text(request, style: const TextStyle(fontSize: 12)),
 
+            const SizedBox(height: 20,), 
+            
+            ElevatedButton(
+              onPressed: () async{
+                try{
+                  final session = await cognitoService.ingresar(
+                    emailController.text,
+                    passwordController.text
+                  );
+
+                  final token = session?.getIdToken().getJwtToken();
+                  setState(() {
+                    request =  'Token:  ${token?.substring(0, 40)} ...';
+                  });
+                } catch (e){
+                  setState(() {
+                    request =  'Error de carga: $e';
+                  });
+                }
+              }, 
+              child: const Text('Subir imagen a S3'),
+            ),
+
           ],
         ),
       

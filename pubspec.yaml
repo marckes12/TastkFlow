@@ -37,6 +37,9 @@ dependencies:
   firebase_messaging: ^16.4.3
   mocktail: ^1.0.5
   amazon_cognito_identity_dart_2: any
+  http: ^1.6.0
+  image_picker: ^1.2.3
+  mime: ^2.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

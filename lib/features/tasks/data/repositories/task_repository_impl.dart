@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:taskflow/features/tasks/domain/entities/task.dart';
 import 'package:taskflow/features/tasks/domain/repositories/task_respository.dart';
 import 'package:taskflow/features/tasks/data/datasources/task_local_datasource.dart';
@@ -31,6 +32,18 @@ class TaskRepositoryImpl implements TaskRepository {
   @override
   Future<Task> toggleTask(String id, bool done) async {
     throw UnimplementedError(); //Similar a createTask
+  }
+
+  @override
+  Future<String> getPresignedUrl(String fileName, String mimeType) async {
+    //Obtenemos el token guardado localmente
+    String token = '';
+    return await remote.getPresignedUrl(fileName, mimeType);
+  }
+
+  @override
+  Future<void> uploadToS3(String presignedUrl, Uint8List fileBytes, String mimeType) async {
+    return await remote.uploadToS3(presignedUrl, fileBytes, mimeType);
   }
 
 }
