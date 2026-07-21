@@ -1,4 +1,5 @@
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
+import 'package:flutter/cupertino.dart';
 export 'package:amazon_cognito_identity_dart_2/cognito.dart';
 
 class CognitoService {
@@ -39,7 +40,7 @@ class CognitoService {
         return sesion;
     } on CognitoUserNewPasswordRequiredException catch(e){
       //Si es primera vez logueando, cognito te pide actualizar tu contraseña por seguridad
-      
+      debugPrint('Error en el logueo de Cognito: $e');
       rethrow;
     } 
   }
