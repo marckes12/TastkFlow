@@ -41,9 +41,7 @@ class CognitoService {
       //Si es primera vez logueando, cognito te pide actualizar tu contraseña por seguridad
       
       rethrow;
-    } catch (e){
-      rethrow;
-    }
+    } 
   }
 
   // Obtener el JWT generado por Cognito
