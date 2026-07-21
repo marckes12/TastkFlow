@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:taskflow/features/tasks/presentation/views/cognito_test.dart';
 import 'core/di/injector.dart';
 import 'features/tasks/presentation/viewmodels/task_viewmodel.dart';
-import 'features/tasks/presentation/views/task_list_view.dart';
 
 void main() {
   setupDependencies(); // registra Dio, repos, usecases, etc. en get_it

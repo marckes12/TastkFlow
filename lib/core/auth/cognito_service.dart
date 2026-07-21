@@ -39,10 +39,9 @@ class CognitoService {
         return sesion;
     } on CognitoUserNewPasswordRequiredException catch(e){
       //Si es primera vez logueando, cognito te pide actualizar tu contraseña por seguridad
-      print('Se requiere que actualices tu contraseña: $e');
+      
       rethrow;
     } catch (e){
-      print('Error de ingreso de sesión: $e');
       rethrow;
     }
   }

@@ -31,9 +31,9 @@ class TaskRemoteDatasource {
   //Subir los bytes de la imagen a S3
   Future<void> uploadToS3(String presignedUrl, Uint8List fileBytes, String mimeType) async {
     //Creamos una nueva instancia de Dio porque la que tenemos predefinida inyecta el header Authorization lo cual causara error con S3
-    final S3Dio = Dio();
+    final s3Dio = Dio();
 
-    await S3Dio.put(
+    await s3Dio.put(
       presignedUrl,
       data: fileBytes,
       options: Options(

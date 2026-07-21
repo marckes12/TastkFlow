@@ -43,7 +43,6 @@ class TaskViewmodel extends ChangeNotifier {
     final XFile? imagen = await img.pickImage(source: ImageSource.gallery);
 
     if (imagen != null){
-      print('Imagen seleccionada: ${imagen.name}');
       return imagen;
     }
     return null;

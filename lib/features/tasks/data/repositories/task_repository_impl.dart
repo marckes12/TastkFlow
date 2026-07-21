@@ -37,7 +37,6 @@ class TaskRepositoryImpl implements TaskRepository {
   @override
   Future<String> getPresignedUrl(String fileName, String mimeType) async {
     //Obtenemos el token guardado localmente
-    String token = '';
     return await remote.getPresignedUrl(fileName, mimeType);
   }
 
